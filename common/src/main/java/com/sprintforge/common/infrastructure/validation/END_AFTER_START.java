@@ -19,4 +19,6 @@ public @interface END_AFTER_START {
     String start();
 
     String end();
+
+    boolean allowEqual() default false;
 }

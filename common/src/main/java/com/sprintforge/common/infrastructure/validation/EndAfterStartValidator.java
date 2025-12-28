@@ -10,11 +10,13 @@ public class EndAfterStartValidator implements ConstraintValidator<END_AFTER_STA
 
     private String startField;
     private String endField;
+    private boolean allowEqual;
 
     @Override
     public void initialize(END_AFTER_START annotation) {
         this.startField = annotation.start();
         this.endField = annotation.end();
+        this.allowEqual = annotation.allowEqual();
     }
 
     @Override
@@ -26,7 +28,9 @@ public class EndAfterStartValidator implements ConstraintValidator<END_AFTER_STA
 
         if (start == null || end == null) return true;
 
-        return end.isAfter(start);
+        return allowEqual
+                ? !end.isBefore(start)
+                : end.isAfter(start);
     }
 
     private Instant readInstant(Object target, String fieldName) {
