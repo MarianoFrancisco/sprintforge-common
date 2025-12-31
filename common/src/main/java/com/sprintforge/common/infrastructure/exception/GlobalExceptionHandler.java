@@ -83,9 +83,7 @@ public class GlobalExceptionHandler extends ResponseEntityExceptionHandler {
             }
         });
 
-        String detail = errors.entrySet().stream()
-                .map(e -> e.getKey() + ": " + e.getValue())
-                .collect(Collectors.joining(", "));
+        String detail = String.join(", ", errors.values());
 
         ProblemDetail pd = ProblemDetail.forStatus(status);
         pd.setTitle("Validation Error");
