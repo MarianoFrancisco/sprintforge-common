@@ -5,8 +5,8 @@ import java.time.Instant;
 import java.util.UUID;
 
 public record ProjectCreatedKafkaMessage(
-        String entity_type,
-        String event_type,
+        String entityType,
+        String eventType,
         String message,
         Instant occurredAt,
         UUID projectId,
