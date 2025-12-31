@@ -5,6 +5,7 @@ public record EmployeeProductivityItemDTO(
         long workedStories,
         long completedStories,
         long pendingStories,
-        long deliveredStoryPoints
+        long deliveredStoryPoints,
+        long hoursWorked
 ) {
 }
