@@ -1,12 +1,14 @@
 package com.sprintforge.common.infrastructure.adapter.in.messaging.kafka.project.event;
 
 import java.math.BigDecimal;
+import java.time.Instant;
 import java.util.UUID;
 
 public record ProjectCreatedKafkaMessage(
         String entity_type,
         String event_type,
         String message,
+        Instant occurredAt,
         UUID projectId,
         String projectKey,
         String name,
