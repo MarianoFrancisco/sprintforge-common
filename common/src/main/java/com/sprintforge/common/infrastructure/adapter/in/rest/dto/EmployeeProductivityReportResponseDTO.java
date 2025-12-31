@@ -3,7 +3,7 @@ package com.sprintforge.common.infrastructure.adapter.in.rest.dto;
 import java.time.LocalDate;
 import java.util.List;
 
-public record EmployeeProductivityReportDTO(
+public record EmployeeProductivityReportResponseDTO(
         LocalDate from,
         LocalDate to,
         List<EmployeeProductivityItemDTO> employees,
