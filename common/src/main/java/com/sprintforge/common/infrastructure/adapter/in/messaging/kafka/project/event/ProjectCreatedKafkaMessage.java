@@ -4,7 +4,9 @@ import java.math.BigDecimal;
 import java.util.UUID;
 
 public record ProjectCreatedKafkaMessage(
-        UUID employeeId,
+        String entity_type,
+        String event_type,
+        String message,
         UUID projectId,
         String projectKey,
         String name,
